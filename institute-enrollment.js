@@ -14,11 +14,12 @@ module.exports = function(context, done) {
   }).all()
     .then(recs => {
       let courses = recs.map(c => {
-        console.log(c);
-        return {
+        let o = {
           'id': c.get('id'),
           'needed': c.get('Enrollments Needed'),
         };
+        console.log(o);
+        return o;
       });
       done(null, courses);
     })
