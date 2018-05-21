@@ -14,6 +14,7 @@ module.exports = function(context, done) {
   }).all()
     .then(recs => {
       let courses = recs.map(c => {
+        console.log(c);
         return {
           'id': c.get('id'),
           'needed': c.get('Enrollments Needed'),
